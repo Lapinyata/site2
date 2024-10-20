@@ -1,0 +1,1152 @@
+* {
+  box-sizing: border-box; /* Для правильного высчитывания размеров элементов */
+}
+body {
+  font-family: "Roboto", sans-serif;
+  padding-top: 44px;
+}
+a,
+button {
+  cursor: pointer;
+  color: inherit;
+}
+.hide {
+  display: none;
+}
+.container {
+  max-width: 1200px; /* Максимальная ширина всего контейнера */
+  margin: auto; /* Одинаковые отступы по краям, которые располагают контейнер в центре */
+}
+.header {
+  /* Шапка сайта */
+  display: flex; /* Элементы выстраиваются на одной линии */
+  align-items: center; /* На одной линии по центру относительно вертикали */
+  justify-content: space-between; /* Раскидать элементы по ширине контейнера на равном расстоянии */
+  margin-bottom: 40px;
+}
+.main {
+  /* Основное тело сайта */
+  background: linear-gradient(
+    180deg,
+    rgba(245, 245, 245, 0) 1.04%,
+    #f5f5f5 100%
+  );
+}
+.input-address {
+  /* Поле ввода адреса доставки */
+  background: #ffffff;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px; /* Скругление углов поля ввода */
+  flex: 0.8;
+  font-size: 16px;
+  line-height: 24px; /* Высота строки (межстрочный интервал) */
+  background-image: url(../img/icon/input_address_logo.svg); /* Картинка домика для поля ввода */
+  background-repeat: no-repeat; /* Убираю "обои", т.е. оставляю только одну картинку */
+  background-position: left 11px center; /* Устанавливаю расположение слева по центру для картинки */
+  padding: 8px 8px 8px 35px; /* Устанавливаю отступ слева для текста, чтобы не сливался с картинкой */
+}
+.buttons {
+  /* Стили для блока с кнопками  */
+  display: flex;
+  align-items: center;
+}
+.button {
+  /* Общие стили для кнопок */
+  display: flex;
+  align-items: center;
+  padding: 8px 16px; /* Отступы сверху/снизу 8px, а по крайям 16px */
+  background: #ffffff;
+  border: 1px solid #d9d9d9;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.0015);
+  border-radius: 2px;
+  color: #595959;
+  font-size: 16px;
+  line-height: 24px;
+}
+.button:hover {
+  /* Общие стили при наведении на кнопку */
+  background: #1890ff;
+  border: 1px solid #1890ff;
+  color: #fff;
+}
+.button-primary {
+  /* Дополнительные стили для кнопок "Войти"/"Выйти" */
+  background: #1890ff;
+  border: 1px solid #1890ff;
+  color: #fff;
+  margin-right: 10px;
+}
+.button-primary:hover {
+  /* Дополнительные стили при наведении на кнопки "Войти"/"Выйти" */
+  background: #ffffff;
+  border: 1px solid #d9d9d9;
+  color: #595959;
+}
+.button-auth {
+  /* Дополнительные стили для кнопки "Войти" */
+  background-position: 20px 13px;
+}
+.button-cart {
+  /* Дополнительные стили для кнопки "Корзина" */
+  display: none;
+  margin: 0 5px;
+}
+.button-out {
+  /* Дополнительные стили для кнопки "Выйти" */
+  display: none;
+  margin: 0 5px;
+}
+.button-primary .button-auth-svg {
+  /* Стили для картинки кнопки "Войти" */
+  width: 24px;
+  height: 24px;
+  margin-right: 3px;
+  margin-left: 0;
+  background-color: #fff;
+  -webkit-mask: url("../img/icon/button-auth.svg") no-repeat 50% 50%;
+  mask: url("../img/icon/button-auth.svg") no-repeat 50% 50%;
+  background-repeat: no-repeat;
+}
+.button-primary:hover .button-auth-svg {
+  /* Стили при наведении для картинки кнопки "Войти" */
+  background-color: #595959;
+}
+.button-primary .button-out-svg {
+  /* Стили для картинки кнопки "Выйти" */
+  width: 18px;
+  height: 18px;
+  margin-right: 5px;
+  margin-left: 0;
+  background-color: #fff;
+  -webkit-mask: url("../img/icon/button-out.svg") no-repeat 50% 50%;
+  mask: url("../img/icon/button-out.svg") no-repeat 50% 50%;
+  background-repeat: no-repeat;
+}
+.button-primary:hover .button-out-svg {
+  /* Стили при наведении для картинки кнопки "Выйти" */
+  background-color: #595959;
+}
+.button .button-cart-svg {
+  /* Стили для картинки кнопки "Корзина" */
+  width: 24px;
+  height: 24px;
+  margin-right: 3px;
+  background-color: #595959;
+  -webkit-mask: url("../img/icon/button-cart.svg") no-repeat 50% 50%;
+  mask: url("../img/icon/button-cart.svg") no-repeat 50% 50%;
+  background-repeat: no-repeat;
+}
+.button:hover .button-cart-svg {
+  /* Стили при наведении для картинки кнопки "Корзина" */
+  background-color: #fff;
+}
+.button-primary .button-cart-svg {
+  /* Стили для картинки кнопки "В Корзину" */
+  background-color: #fff;
+}
+.button-primary:hover .button-cart-svg {
+  /* Стили при наведении для картинки кнопки "В Корзину" */
+  background-color: #595959;
+}
+.user-name {
+  /* Стили для имени пользователя при авторизации */
+  display: none;
+  margin-right: 20px;
+  font-weight: bold;
+  font-size: 18px;
+}
+.swiper-wrapper {
+  cursor: pointer; /* Изменение курсора для свайпера */
+}
+.promo-slider {
+  width: 600px; /* Задаю размеры слайдера */
+  height: 300px;
+}
+.swiper-pagination {
+  margin-bottom: 15px; /* Стили для точек свайпера */
+}
+.slide_1 {
+  /* Стили слайда 1 */
+  background: #fff1b8;
+  background-image: url(../img/promo/pizza.png);
+  background-repeat: no-repeat;
+  background-position: top right -225px;
+  background-size: 950px;
+}
+.slide_2 {
+  /* Стили слайда 2 */
+  background: #d6e4ff;
+  background-image: url(../img/promo/freakshake.png);
+  background-repeat: no-repeat;
+  background-position: top -120px right 0px;
+  background-size: 500px;
+}
+.slide_3 {
+  /* Стили слайда 3 */
+  background: #fff566;
+  background-image: url(../img/promo/breakfast.png);
+  background-repeat: no-repeat;
+  background-position: top -10px right -50px;
+  background-size: 650px;
+}
+.slide_4 {
+  /* Стили слайда 4 */
+  background: #fff1f0;
+  background-image: url(../img/promo/sushi.png);
+  background-repeat: no-repeat;
+  background-position: top -20px right -20px;
+  background-size: 600px;
+}
+.promo {
+  /* Стили блока Промо */
+  box-shadow: 0 7px 12px rgba(158, 158, 163, 0.1);
+  border-radius: 10px;
+  padding: 68px 70px;
+  margin-bottom: 56px;
+}
+.promo-title {
+  /* Стили заголовка блока Промо */
+  font-style: normal;
+  font-weight: bold;
+  font-size: 39px;
+  line-height: 46px;
+  color: #302c34;
+  margin: 0;
+  padding-bottom: 15px;
+}
+.promo-text {
+  /* Стили основного текста блока Промо */
+  font-style: normal;
+  font-weight: normal;
+  max-width: 540px;
+  font-size: 24px;
+  line-height: 28px;
+  color: #302c34;
+  margin: 0;
+}
+.section-heading {
+  /* Стили для всей шапки "Рестораны" */
+  display: flex;
+  align-items: center;
+  margin-bottom: 44px; /* Интервал между всей шапкой и карточками снизу */
+}
+.section-title {
+  /* Стили для заголовка "Рестораны" */
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
+  color: #000000;
+  margin: 0;
+  margin-right: 30px;
+}
+.input-search {
+  /* Поле поиска блюд и ресторанов */
+  background: #ffffff;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  width: 310px;
+  font-size: 16px;
+  line-height: 24px;
+  background-image: url(../img/icon/input_search_logo.svg);
+  background-repeat: no-repeat;
+  background-position: left 11px center;
+  padding: 8px 8px 8px 35px;
+  margin-left: auto;
+}
+.cards {
+  /* Стили для всего блока карточек */
+  display: flex;
+  align-items: flex-start; /* Выравнивание карточек в начале поперечной оси контейнера */
+  justify-content: space-between;
+  flex-wrap: wrap; /* Перенос на новую строчку всех карточек, которые не помещаются */
+}
+.card {
+  /* Стили карточки ресторана */
+  background: #ffffff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 7px;
+  overflow: hidden; /* Для скруглённости картинки скрываю(обрезаю) всё, что находится за пределами карточки */
+  margin-bottom: 30px; /* Делаю вертикальный интервал между карточками */
+  flex-basis: 32%; /* Каждая карточка занимает 32% от общего контейнера */
+  text-decoration: none;
+}
+.card-restaurant {
+  cursor: pointer;
+}
+.card-image {
+  /* Стили картинки в карточке */
+  width: 100%;
+  height: 250px;
+  object-position: center;
+  object-fit: cover; /* Если заказчик подставляет картинку других размеров, то картинка будет обрезаться */
+}
+.card-text {
+  /* Стили для блока с текстом в карточке */
+  padding-top: 20px;
+  padding-bottom: 35px;
+  padding-left: 23px;
+  padding-right: 23px;
+  min-height: 275px;
+  display: flex;
+  flex-direction: column;
+}
+.restaurants .card-text {
+  min-height: auto;
+}
+.card-heading {
+  /* Стили для заголовка текстового блока в карточке */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.card-title {
+  /* Стили для названия ресторана в карточке */
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+  margin: 0;
+}
+.card-title-reg {
+  font-weight: 400; /* Изменение шрифта в card-title для карточек блюд в ресторане */
+}
+.card-tag {
+  /* Стили для времени доставки в карточке */
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+  color: #fff;
+  background: #262626;
+  border-radius: 2px;
+  padding: 1px 8px;
+}
+.card-info {
+  /* Стили для информации о ресторане в карточке */
+  padding-top: 5px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /* Перенос на новую строку всеё информации, если она частично не помещается */
+}
+.rating {
+  /* Стили для рейтинга в информации о ресторане */
+  background-image: url("../img/icon/rating.svg");
+  background-repeat: no-repeat;
+  background-position: 0 7px;
+  padding-left: 20px;
+  margin-right: 26px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 32px;
+  color: #ffc107;
+}
+.price {
+  /* Стили для цены в информации о ресторане */
+  margin-right: 10px;
+  color: #8c8c8c;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 32px;
+}
+.price:after {
+  /* Псевдоэлемент для блока price, который позволит сделать точку между ценой и категорией */
+  content: "";
+  width: 5px;
+  height: 5px;
+  background-color: #8c8c8c;
+  display: inline-block; /* Делаю элемент(квадратная точка) строчно-блочным для его отображения */
+  vertical-align: middle; /* Выравниваю точку по вертикали */
+  border-radius: 50%; /* Скругляю квадратную точку до нормального вида */
+  margin-left: 10px;
+}
+.category {
+  /* Стили для категории в информации о ресторане */
+  color: #8c8c8c;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 32px;
+  overflow: hidden; /* Обрезаю текст, который не помещается в заданную область */
+  white-space: nowrap; /* Запрещаю перенос строк */
+  text-overflow: ellipsis; /* После обрезания текста добавляется многоточие */
+  max-width: 150px;
+}
+.ingredients {
+  /* Стили для ингредиентов в информации о блюде */
+  color: #8c8c8c;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+}
+.card-buttons {
+  /* Стили для блока с кнопкой и ценой в карточке блюда в ресторане */
+  margin-top: 24px;
+  display: flex;
+  flex-grow: 1;
+  align-items: flex-end;
+}
+.card-price-bold {
+  /* Стили цены на карточке блюда в ресторане */
+  font-style: normal;
+  font-weight: bold;
+  padding-bottom: 5px;
+  font-size: 20px;
+  line-height: 32px;
+  margin-left: 32px;
+}
+.footer {
+  padding: 60px 0; /* Задаю внутренние отступы для подвала */
+}
+.footer-block {
+  display: flex; /* Распределяю конктент равномерно по всему подвалу */
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-nav {
+  margin-right: auto; /* Стили для всего блока ссылок в подвале */
+  margin-left: 35px;
+}
+.footer-link {
+  /* Стили ссылок подвала */
+  display: inline-block;
+  color: #595959;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+}
+.footer-link:not(:last-child) {
+  margin-right: 15px; /* Для всех ссылок данного класса, кроме последней */
+}
+.social-links {
+  display: flex; /* Стили для всего блока социальных сетей в подвале */
+  align-items: center;
+}
+.social-link:not(:last-child) {
+  margin-right: 21px; /* Для всех социальных сетей данного класса, кроме последней */
+}
+.modal {
+  /* Стили для блока с модальным окном */
+  position: fixed; /* Фиксирую позицию окна, чтобы оно не прокручивалось */
+  left: 0; /* Приклеиваю окно к левому верхнему углу */
+  top: 0;
+  width: 100%; /* Растягиваю окно на 100% ширины и высоты относительно родительского тега body */
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+  z-index: 999; /* Страховка, чтобы при любой ситуации модальное окно перекрывало всю остальную вёрстку */
+}
+.modal-auth {
+  /* Стили модального окна авторизации */
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+  z-index: 999;
+}
+.is-open {
+  display: flex;
+}
+.modal-dialog {
+  /* Стили для блока модального окна */
+  margin: auto;
+  max-width: 780px;
+  width: 95%;
+  background: #ffffff;
+  border-radius: 5px;
+  padding: 40px 45px;
+}
+.modal-dialog-auth {
+  /* Уточняющие стили для блока модального окна авторизации */
+  width: auto;
+  position: relative;
+}
+.label-auth {
+  /* Стили для лейблов окна авторизации */
+  display: block;
+  margin: 30px;
+}
+.label-auth span {
+  /* Стили для спанов в лейблах окна авторизации */
+  width: 80px;
+  display: inline-block;
+}
+.modal-header {
+  display: flex; /* Стили для всего заголовка корзины */
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 45px;
+}
+.modal-title {
+  margin: 0; /* Стили для всего элемента заголовка "Корзина" */
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
+}
+.close {
+  font-size: 36px;
+  border: none;
+  background-color: transparent; /* Задаю прозрачный фон для кнопки закрытия корзины */
+}
+.close-auth {
+  /* Стили для кнопки закрытия модального окна авторизации */
+  font-size: 36px;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+.modal-body {
+  margin-bottom: 22px; /* Стили для списка товаров в корзине */
+}
+.food-row {
+  display: flex; /* Стили для строки товара в корзине */
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #d9d9d9;
+  margin-bottom: 15px;
+}
+.food-name {
+  font-style: normal; /* Стили для наименования товара в строке товара в корзине */
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 32px;
+}
+.food-price {
+  margin-left: auto; /* Стили для цены в строке товара в корзине */
+  margin-right: 47px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 32px;
+}
+.food-counter {
+  display: flex; /* Стили для блока кнопок в строке товара в корзине */
+  align-items: center;
+}
+.counter-button {
+  /* Стили для кнопок счётчика в строке товара в корзине */
+  width: 39px;
+  height: 32px;
+  background: #ffffff;
+  border: 1px solid #40a9ff;
+  box-sizing: border-box;
+  border-radius: 2px;
+  display: flex; /* Задаю стили для расположения и внешнего вида символов внутри кнопок по центру */
+  align-items: center;
+  justify-content: center;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  color: #40a9ff;
+}
+.counter-button:hover {
+  background: #40a9ff; /* Стили для наведения на кнопки счётчика в строке товара в корзине */
+  border: 1px solid #ffffff;
+  color: #ffffff;
+}
+.counter {
+  font-style: normal; /* Стили для значения счётчика в строке товара в корзине */
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.modal-footer {
+  display: flex; /* Стили для подвала корзины */
+  align-items: center;
+  justify-content: space-between;
+}
+.modal-auth .modal-footer {
+  justify-content: flex-end; /* Стили для подвала авторизации */
+}
+.footer-buttons {
+  display: flex; /* Стили для блока с кнопками в подвале корзины */
+  align-items: center;
+}
+.modal-pricetag {
+  background: #262626; /* Стили для блока с ценой в корзине */
+  border-radius: 5px;
+  color: #fff;
+  padding: 15px 20px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+}
+@media (max-width: 1366px) {
+  /* Медиазапрос(директива) для адаптивной вёрстки */
+  .container {
+    max-width: 960px; /* Меняю ширину контейнера под более маленький экран */
+  }
+  .slide_1 {
+    background-position: top right -225px; /* Меняю положение и размеры Логотипа в Промо */
+    background-size: 700px;
+  }
+  .slide_2 {
+    background-position: top -135px right -165px;
+    background-size: 500px;
+  }
+  .slide_3 {
+    background-position: top -10px right -280px;
+    background-size: 650px;
+  }
+  .slide_4 {
+    background-position: top -30px right -170px;
+    background-size: 600px;
+  }
+  .rating {
+    margin-right: 15px; /* Изменяю отступ после рейтинга */
+  }
+  .category,
+  .price {
+    font-size: 15px; /* Изменяю шрифт цены и категории ресторана */
+  }
+}
+@media (max-width: 992px) {
+  .container {
+    max-width: 750px;
+  }
+  .slide_1 {
+    max-height: 284px;
+    background-position: top right -225px; /* Меняю положение и размеры Логотипа в Промо */
+    background-size: 620px;
+  }
+  .slide_2 {
+    max-height: 284px;
+    background-position: top -135px right -170px;
+    background-size: 500px;
+  }
+  .slide_3 {
+    max-height: 284px;
+    background-position: top 45px right -240px;
+    background-size: 550px;
+  }
+  .slide_4 {
+    max-height: 284px;
+    background-position: top 20px right -170px;
+    background-size: 500px;
+  }
+  .promo-title {
+    font-size: 33px; /* Изменяю шрифты заголовка и текста в промо */
+    line-height: 40px;
+    padding-bottom: 12px;
+  }
+  .promo-text {
+    font-size: 18px;
+    max-width: 400px;
+    line-height: 28px;
+  }
+  .card {
+    flex-basis: 49%; /* Оставляю только 2 карточки в одной строке */
+  }
+  .footer-link {
+    font-size: 16px; /* Изменяю размеры ссылок в подвале */
+  }
+  .modal-dialog {
+    margin: auto;
+    max-width: 570px;
+    width: 95%;
+  }
+  .modal-dialog-auth {
+    /* Уточняющие стили для блока модального окна авторизации */
+    width: auto;
+    position: relative;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    max-width: 600px;
+  }
+  .header {
+    flex-wrap: wrap; /* Переносы в заголовке, если его часть не помещается */
+    margin-bottom: 20px;
+  }
+  .input-address {
+    margin-top: 15px;
+    flex: 1;
+    order: 5; /* Делаю строку Адреса Доставки последней по счёту, чтобы она переносилась */
+    min-width: 600px;
+  }
+  .button-auth {
+    margin-right: 0;
+  }
+  .button-out {
+    margin-right: 0;
+  }
+  .promo {
+    margin-bottom: 40px;
+  }
+  .slide_1 {
+    max-height: 205px;
+    padding: 48px 50px;
+    background-position: top right -225px; /* Меняю положение и размеры Логотипа в Промо */
+    background-size: 500px;
+  }
+  .slide_2 {
+    padding: 48px 50px;
+    max-height: 205px;
+    background-position: top -110px right -125px;
+    background-size: 380px;
+  }
+  .slide_3 {
+    padding: 48px 50px;
+    max-height: 205px;
+    background-position: top 5px right -200px;
+    background-size: 450px;
+  }
+  .slide_4 {
+    padding: 48px 50px;
+    max-height: 205px;
+    background-position: top -10px right -160px;
+    background-size: 430px;
+  }
+  .swiper-pagination {
+    margin-bottom: 8px; /* Стили для точек свайпера */
+  }
+  .promo-title {
+    font-size: 24px; /* Изменяю шрифты заголовка и текста в промо */
+    line-height: 31px;
+    padding-bottom: 9px;
+  }
+  .promo-text {
+    margin-top: 0;
+    font-size: 14px;
+    max-width: 300px;
+    line-height: 19px;
+  }
+  .section-heading {
+    margin-bottom: 33px;
+  }
+  .card-title {
+    font-size: 18px; /* Изменяю шрифты заголовка карточки ресторана */
+  }
+  .card-info {
+    flex-wrap: wrap; /* Перенос всей информации, если её часть не помещается в строке */
+  }
+  .card .rating {
+    flex-basis: 100%; /* Вся инфа, кроме рейтинга будет переноситься на другую строку. НО ТОЛЬКО внутри блока CARD */
+  }
+  .modal-dialog {
+    /* Стили для блока модального окна */
+    max-width: 470px;
+    width: 95%;
+    padding: 35px 40px;
+  }
+  .modal-dialog-auth {
+    /* Уточняющие стили для блока модального окна авторизации */
+    width: auto;
+    position: relative;
+  }
+  .modal-header {
+    margin-bottom: 35px; /* Стили для всего заголовка корзины */
+  }
+  .modal-title {
+    margin: 0; /* Стили для всего элемента заголовка "Корзина" */
+    font-size: 24px;
+    line-height: 30px;
+  }
+  .close {
+    font-size: 24px;
+  }
+  .modal-body {
+    margin-bottom: 22px; /* Стили для списка товаров в корзине */
+  }
+  .food-row {
+    display: flex; /* Стили для строки товара в корзине */
+    margin-bottom: 15px;
+  }
+  .food-name {
+    font-style: normal; /* Стили для наименования товара в строке товара в корзине */
+    font-size: 14px;
+    line-height: 26px;
+  }
+  .food-price {
+    margin-left: auto; /* Стили для цены в строке товара в корзине */
+    margin-right: 20px;
+    font-size: 16px;
+    line-height: 26px;
+  }
+  .counter-button {
+    width: 30px; /* Стили для кнопок счётчика в строке товара в корзине */
+    height: 23px;
+    display: flex; /* Задаю стили для расположения и внешнего вида символов внутри кнопок по центру */
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 18px;
+  }
+  .counter {
+    font-style: normal; /* Стили для значения счётчика в строке товара в корзине */
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    margin-left: 7px;
+    margin-right: 7px;
+  }
+  .modal-pricetag {
+    padding: 11px 16px; /* Стили для блока с ценой в корзине */
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 18px;
+  }
+  .footer-nav {
+    margin-left: 0; /* Стили подвала сайта */
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 60px;
+  }
+}
+@media (max-width: 625px) {
+  .container {
+    max-width: 90%;
+  }
+  .header {
+    flex-wrap: wrap; /* Переносы в заголовке, если его часть не помещается */
+    margin-bottom: 20px;
+  }
+  .input-address {
+    margin-top: 15px;
+    order: 5; /* Делаю строку Адреса Доставки последней по счёту, чтобы она переносилась */
+    flex: 1;
+    min-width: 90%;
+  }
+  .button-auth {
+    margin-right: 0;
+  }
+  .button-out {
+    margin-right: 0;
+    padding: 4px 8px;
+  }
+  .button-out-svg {
+    max-width: 14px;
+    max-height: 14px;
+  }
+  .user-name {
+    margin-right: 10px;
+  }
+  .button-cart {
+    padding: 4px 8px;
+  }
+  .promo {
+    margin-bottom: 35px;
+  }
+  .slide_1 {
+    max-height: 190px;
+    padding: 40px 42px;
+    background-position: top -80px right -160px; /* Меняю положение и размеры Логотипа в Промо */
+    background-size: 350px;
+  }
+  .slide_2 {
+    padding: 40px 42px;
+    max-height: 190px;
+    background-position: top -100px right -218px;
+    background-size: 350px;
+  }
+  .slide_3 {
+    padding: 40px 42px;
+    max-height: 190px;
+    background-position: top 20px right -20px;
+    background-size: 130px;
+    background-image: url(../img/promo/breakfast_2.png);
+  }
+  .slide_4 {
+    padding: 40px 42px;
+    max-height: 190px;
+    background-position: top 10px right -170px;
+    background-size: 300px;
+  }
+  .swiper-pagination {
+    margin-bottom: 5px; /* Стили для точек свайпера */
+  }
+  .section-heading {
+    margin-bottom: 33px;
+  }
+  .section-title {
+    font-size: 25px; /* Стили для заголовка "Рестораны" */
+  }
+  .card {
+    flex-basis: 100%;
+  }
+  .card-image {
+    width: 100%;
+  }
+  .modal-dialog {
+    /* Стили для блока модального окна */
+    max-width: 400px;
+    width: 95%;
+    padding: 35px 40px;
+  }
+  .modal-dialog-auth {
+    /* Уточняющие стили для блока модального окна авторизации */
+    width: auto;
+    position: relative;
+  }
+  .modal-header {
+    margin-bottom: 20px; /* Уточняющие стили для заголовка корзины */
+  }
+  .label-auth {
+    margin: 20px; /* Уточняющие стили для лейблов с вводами модального окна авторизации */
+    margin-left: 30px;
+  }
+  .button-modal {
+    font-size: 12px; /* Стили для кнопок "Оформить заказ" и "Отмена" в корзине */
+    line-height: 20px;
+    padding: 8px 16px;
+    margin: 0;
+  }
+  .button-modal:not(:last-child) {
+    margin-right: 5px;
+  }
+  .footer {
+    padding: 40px 0;
+  }
+  .footer-block {
+    align-items: flex-start;
+  }
+  .footer-nav {
+    margin-left: 0; /* Стили для ссылок в подвале сайта */
+    margin-right: 0;
+    order: 0;
+    display: flex;
+    flex-direction: column;
+    max-height: 100px;
+  }
+  .footer-logo {
+    margin-right: 10px; /* Стили для лого в подвале сайта */
+    order: 1;
+  }
+  .social-links {
+    order: 2; /* Стили для соц-сетей */
+  }
+  .social-link:not(:last-child) {
+    margin-right: 11px;
+  }
+}
+@media (max-width: 480px) {
+  .button {
+    min-height: 37px; /* Общие стили для всех кнопок */
+  }
+  .button-out {
+    min-width: 45px; /* Стиль для кнопки выхода */
+  }
+  .button-login {
+    margin-left: auto; /* Стиль для кнопки войти формы авторизации */
+  }
+  .button-primary .button-out-svg {
+    margin-left: 8px; /* Стиль для картинки кнопки выйти */
+  }
+  .button-text {
+    display: none; /* Отключение текста в кнопках заголовка страницы */
+  }
+  .slide_1 {
+    min-height: 180px;
+    max-height: 180px;
+    padding: 28px 32px;
+    background-image: none;
+  }
+  .slide_2 {
+    padding: 28px 32px;
+    min-height: 180px;
+    max-height: 180px;
+    background-image: none;
+  }
+  .slide_3 {
+    padding: 28px 32px;
+    min-height: 180px;
+    max-height: 180px;
+    background-image: none;
+  }
+  .slide_4 {
+    padding: 28px 28px;
+    min-height: 180px;
+    max-height: 180px;
+    background-image: none;
+  }
+  .section-heading {
+    flex-wrap: wrap; /* Перенос в заголовке "Рестораны", чтобы строка поиска была отдельно */
+  }
+  .input-search {
+    flex-basis: 100%;
+  }
+  .modal-dialog {
+    /* Стили для блока модального окна */
+    max-width: 330px;
+    width: 95%;
+    padding: 35px 40px;
+  }
+  .modal-dialog-auth {
+    /* Уточняющие стили для блока модального окна авторизации */
+    width: auto;
+    position: relative;
+  }
+  .modal-dialog-auth .modal-body {
+    padding-right: 0; /* Изменение стилей тела модального окна авторизации */
+    padding-left: 0;
+  }
+  .footer-block {
+    flex-wrap: wrap; /* Стили для блока подвала*/
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-logo {
+    order: 0; /* Стили для лого в блоке подвала */
+    margin-bottom: 20px;
+  }
+  .footer-nav {
+    margin-bottom: 20px; /* Стили для ссылок в блоке подвала */
+    text-align: center;
+  }
+  .footer-link:not(:last-child) {
+    margin-right: 0;
+  }
+  .modal-header {
+    margin-bottom: 25px; /* Стили для всего заголовка корзины */
+  }
+  .modal-title {
+    margin: 0; /* Стили для всего элемента заголовка "Корзина" */
+    font-size: 22px;
+    line-height: 28px;
+  }
+  .modal-dialog-auth .modal-title {
+    margin-left: 8px; /* Стили для всего элемента заголовка "Авторизация" */
+    font-size: 22px;
+    line-height: 28px;
+  }
+  .close {
+    font-size: 22px;
+  }
+  .modal-body {
+    margin-bottom: 22px; /* Стили для списка товаров в корзине */
+  }
+  .food-row {
+    display: flex; /* Стили для строки товара в корзине */
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .food-name {
+    font-style: normal; /* Стили для наименования товара в строке товара в корзине */
+    font-size: 12px;
+    line-height: 22px;
+  }
+  .food-price {
+    margin-left: auto; /* Стили для цены в строке товара в корзине */
+    margin-right: 20px;
+    font-size: 14px;
+    line-height: 22px;
+    width: 50px;
+  }
+  .counter-button {
+    width: 26px; /* Стили для кнопок счётчика в строке товара в корзине */
+    height: 19px;
+    display: flex; /* Задаю стили для расположения и внешнего вида символов внутри кнопок по центру */
+    font-size: 8px;
+    line-height: 14px;
+  }
+  .counter {
+    font-style: normal; /* Стили для значения счётчика в строке товара в корзине */
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .modal-footer {
+    display: flex; /* Стили для подвала корзины */
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .footer-buttons {
+    display: flex; /* Стили для блока с кнопками в подвале корзины */
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+  .modal-pricetag {
+    padding: 11px 16px; /* Стили для блока с ценой в корзине */
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 18px;
+    margin-bottom: 8px;
+  }
+  .button-modal {
+    font-size: 14px; /* Стили для коррекции кнопок корзины */
+    line-height: 20px;
+    padding: 8px 16px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .button-modal:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 8px;
+  }
+}
+@media (max-width: 365px) {
+  .promo-title {
+    font-size: 24px; /* Изменяю шрифты заголовка и текста в промо */
+    line-height: 28px;
+    padding-bottom: 9px;
+  }
+  .promo-text {
+    margin-top: 0;
+    font-size: 14px;
+    max-width: 300px;
+    line-height: 16px;
+  }
+  .slide_1,
+  .slide_2 {
+    padding: 15px 28px;
+  }
+  .slide_3 {
+    padding: 10px 28px;
+  }
+  .slide_4 {
+    padding: 25px 28px;
+  }
+  .card-heading {
+    margin-bottom: 0;
+  }
+  .food-price {
+    margin-right: 10px;
+    margin-left: 0;
+  }
+  .modal-dialog {
+    /* Стили для блока модального окна */
+    max-width: 280px;
+    width: 95%;
+    padding: 30px 20px;
+  }
+  .modal-dialog-auth {
+    /* Уточняющие стили для блока модального окна авторизации */
+    width: auto;
+    position: relative;
+    padding: 30px 20px;
+  }
+  .modal-dialog-auth .modal-body {
+    padding-right: 0; /* Изменение стилей тела модального окна авторизации */
+    padding-left: 0;
+    margin-top: 10px;
+  }
+  .button-login {
+    margin-right: 0;
+  }
+}
